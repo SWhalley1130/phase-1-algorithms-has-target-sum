@@ -1,5 +1,20 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+
+    for (let l1=0; l1<array.length;l1++)
+    {
+        for (let l2=0;l2<array.length;l2++)
+        {
+            if ((l1!==l2) && (array[l1]+array[l2]===target))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }
 
 /* 
