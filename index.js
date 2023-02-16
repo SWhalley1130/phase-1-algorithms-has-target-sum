@@ -1,33 +1,37 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+//function hasTargetSum(array, target) {
+//  // Write your algorithm here
+//
+//    for (let l1=0; l1<array.length;l1++)
+//    {
+//        for (let l2=0;l2<array.length;l2++)
+//        {
+//            if ((l1!==l2) && (array[l1]+array[l2]===target))
+//            {
+//                return true;
+//            }
+//            else
+//            {
+//                return false;
+//            }
+//        }
+//    }
+//}
 
-    for (let l1=0; l1<array.length;l1++)
+function hasTargetSum(array, target) {
+    const seenNumbers=new Set();
+    for (const num of array)
     {
-        for (let l2=0;l2<array.length;l2++)
+        const complement=target-num;
+        if(seenNumbers.has(complement)) 
         {
-            if ((l1!==l2) && (array[l1]+array[l2]===target))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return true;
         }
+        seenNumbers.add(num);
     }
+    return false;
 }
 
-/* 
-  Write the Big O time complexity of your function here
-*/
 
-/* 
-  Add your pseudocode here
-*/
-
-/*
-  Add written explanation of your solution here
-*/
 
 // You can run `node index.js` to view these console logs
 if (require.main === module) {
